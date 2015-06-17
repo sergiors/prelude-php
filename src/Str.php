@@ -41,7 +41,7 @@ namespace Prelude
      * Splits a string at newlines into a list.
      * String -> [String]
      */
-    static function lines(string $str): string
+    static function lines(string $str): array
     {
       if (strlen($str) === 0) {
         return [];
@@ -55,7 +55,7 @@ namespace Prelude
      */
     static function unlines(array $xs): string
     {
-      return implode("\n", $xs);
+      return implode(PHP_EOL, $xs);
     }
 
     /**
@@ -86,7 +86,7 @@ namespace Prelude
      */
     static function chars(string $str): array
     {
-      return preg_split("//", $str);
+      return str_split($str);
     }
 
     /**
@@ -106,8 +106,8 @@ namespace Prelude
     static function repeat(int $n, string $str): string
     {
       $result = "";
-      for ($i = 0, $strlen = strlen($str); $i <= $n; $i++) {
-        $result += $str;
+      for ($i = 0, $strlen = strlen($str); $i < $n; $i++) {
+        $result .= $str;
       }
       return $result;
     }
