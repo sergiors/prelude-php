@@ -4,6 +4,14 @@
 
 An awesome library for data handling!
 
-Prelude is a library for PHP language that aims to be compatible with [Prelude LS](https://github.com/gkz/prelude-ls) and a port
-of Haskell's Prelude module. It contains useful functions for data handling and allows functional programming in a more
-expressive way.
+Prelude PHP is a generic library for data handling, in special, lists, with
+basis on Haskell's Prelude module and [LiveScript Prelude Library](https://github.com/gkz/prelude-ls).
+
+## Documentation
+
+### Prelude::Str
+
+#### array split(string $sep, string $str)
+
+`String -> String -> [String]`
+Splits a string on a separator into a list of strings.
