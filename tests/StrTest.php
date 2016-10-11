@@ -100,5 +100,51 @@ namespace Prelude
       $this->assertEquals(true, $trueVal);
       $this->assertEquals(false, $falseVal);
     }
+
+    public function testDasherize()
+    {
+        $text = 'Capybaras are love.';
+
+        $dashered = Str::dasherize($text);
+
+        $this->assertEquals('Capybaras-are-love.', $dashered);
+    }
+
+    public function testReverse()
+    {
+        $text = 'Capybaras are love.';
+
+        $reversed = Str::reverse($text);
+
+        $this->assertEquals('.evol era sarabypaC', $reversed);
+    }
+
+    public function testTake()
+    {
+        $text = 'Petris';
+
+        $sliced = Str::take(4, $text);
+
+        $this->assertEquals('Petr', $sliced);
+    }
+
+    public function testDrop()
+    {
+        $text = 'Petris';
+
+        $dropped = Str::drop(4, $text);
+
+        $this->assertEquals('is', $dropped);
+    }
+
+    public function testSplitAt()
+    {
+        $text = 'Petris';
+        $result = ['Petr', 'is'];
+
+        $dropped = Str::splitAt(4, $text);
+
+        $this->assertEquals($result, $dropped);
+    }
   }
 }

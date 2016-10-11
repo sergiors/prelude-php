@@ -136,7 +136,7 @@ namespace Prelude
      */
     static function dasherize(string $str): string
     {
-      # TODO
+       return str_replace(' ', '-', $str);
     }
 
     /**
@@ -152,6 +152,10 @@ namespace Prelude
      * Reverses a string.
      * String -> String
      */
+    static function reverse(string $str): string
+    {
+        return strrev($str);
+    }
 
     /**
      * Returns a slice of the inputted string.
@@ -162,16 +166,27 @@ namespace Prelude
      * Returns the first n items in string.
      * Number -> String -> String
      */
-
+    static function take(int $length, string $str ): string
+    {
+        return substr($str, 0, $length);
+    }
     /**
      * Returns the result of dropping the first n items of the string.
      * Number -> String -> String
      */
+    static function drop(int $length, string $str): string
+    {
+        return substr($str, $length);
+    }
 
     /**
      * Equivalent to [(Str.take n, xs), (Str.drop n, xs)]
      * Number -> String -> [String, String]
      */
+    static function splitAt(int $position, string $str): array
+    {
+        return [Str::take($position, $str), Str::drop($position, $str)];
+    }
 
     /**
      * Takes the first items of the string which pass the test.
